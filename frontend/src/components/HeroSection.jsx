@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Zap, Lock, Sparkles, ArrowRight, Activity } from 'lucide-react';
 
-export default function HeroSection({ onStartScan, onTryLab, stats }) {
+export default function HeroSection({ onStartScan, onOpenScratchpad, onTryLab, stats }) {
   return (
     <section style={{
       padding: '3.5rem 0 2.5rem 0',
@@ -78,8 +78,11 @@ export default function HeroSection({ onStartScan, onTryLab, stats }) {
           <button className="btn-primary" onClick={onStartScan}>
             <Zap size={18} /> Examine Suspicious Content
           </button>
+          <button className="btn-secondary" onClick={onOpenScratchpad} style={{ background: 'rgba(5, 150, 105, 0.12)', borderColor: 'rgba(5, 150, 105, 0.3)', color: 'var(--deep-forest)' }}>
+            <Sparkles size={18} color="var(--primary-emerald)" /> Open Threat Scratchpad Demo
+          </button>
           <button className="btn-secondary" onClick={onTryLab}>
-            <Activity size={18} /> Test Skills in Simulator <ArrowRight size={16} />
+            <Activity size={18} /> Test Simulator <ArrowRight size={16} />
           </button>
         </div>
 

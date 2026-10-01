@@ -5,6 +5,7 @@ import ThreatAnalyzer from './components/ThreatAnalyzer';
 import ScreenshotScanner from './components/ScreenshotScanner';
 import LearnWhyLibrary from './components/LearnWhyLibrary';
 import InteractiveSimulator from './components/InteractiveSimulator';
+import ThreatScratchpad from './components/ThreatScratchpad';
 import ThreatDirectory from './components/ThreatDirectory';
 import Footer from './components/Footer';
 
@@ -53,6 +54,7 @@ export default function App() {
           {/* Hero Section */}
           <HeroSection
             onStartScan={handleStartScan}
+            onOpenScratchpad={() => setActiveTab('scratchpad')}
             onTryLab={() => setActiveTab('simulator')}
             stats={stats}
           />
@@ -60,6 +62,10 @@ export default function App() {
           {/* Tab Views */}
           {activeTab === 'inspector' && (
             <ThreatAnalyzer lang={lang} initialContent={ocrText} />
+          )}
+
+          {activeTab === 'scratchpad' && (
+            <ThreatScratchpad lang={lang} />
           )}
 
           {activeTab === 'ocr' && (

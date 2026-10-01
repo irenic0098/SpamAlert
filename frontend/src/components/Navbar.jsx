@@ -64,6 +64,9 @@ export default function Navbar({ activeTab, setActiveTab, lang, setLang }) {
           <button className={`tab-btn ${activeTab === 'inspector' ? 'active' : ''}`} onClick={() => setActiveTab('inspector')}>
             <Search size={15} /> Inspector
           </button>
+          <button className={`tab-btn ${activeTab === 'scratchpad' ? 'active' : ''}`} onClick={() => setActiveTab('scratchpad')}>
+            <Sliders size={15} /> Scratchpad Demo
+          </button>
           <button className={`tab-btn ${activeTab === 'ocr' ? 'active' : ''}`} onClick={() => setActiveTab('ocr')}>
             <Camera size={15} /> OCR Scan
           </button>
